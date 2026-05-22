@@ -1,17 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="bg-azul ion-no-padding">
+  <div class="main-container">
+    
+    <h2 class="titulo-secao">Todos os Produtos</h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="botoes-controle">
+      <ion-button 
+        *ngIf="!showList" 
+        class="botao-acao" 
+        (click)="exibirLista()" 
+        [disabled]="products.length === 0">
+        Exibir Todos os Produtos
+      </ion-button>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <ion-button 
+        *ngIf="showList" 
+        class="botao-acao botao-ocultar" 
+        (click)="ocultarLista()">
+        Ocultar Lista de Produtos
+      </ion-button>
+    </div>
+
+    <div class="lista-produtos-container" *ngIf="showList">
+      <ion-card class="cartao-preto" *ngFor="let produto of products">
+        <div class="foto-produto-container">
+          <img [src]="produto.image" alt="Produto" />
+        </div>
+
+        <ion-card-content class="texto-branco">
+          <p class="id-produto"><strong>ID do Recurso:</strong> {{ produto.id }}</p>
+          <h3 class="subtitulo">{{ produto.title }}</h3>
+          <p class="categoria"><strong>Categoria:</strong> {{ produto.category }}</p>
+          <p class="descricao">{{ produto.description }}</p>
+          <h2 class="preco">US$ {{ produto.price }}</h2>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="loading-container" *ngIf="products.length === 0">
+      <ion-spinner name="crescent" color="light"></ion-spinner>
+      <p>Sincronizando banco de dados...</p>
+    </div>
+
+  </div>
 </ion-content>
