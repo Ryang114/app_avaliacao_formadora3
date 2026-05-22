@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="bg-azul ion-no-padding">
+  <div class="main-container">
+    <h2 class="titulo-boas-vindas">Olá, seja bem-vindo ao meu perfil</h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card class="cartao-preto">
+      <div class="foto-perfil-container">
+        <img src="/assets/imagens/Foto_perfil.jpeg"alt="Foto Ryan" />
+      </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-card-content class="texto-branco">
+        <h3 class="subtitulo">Minhas informações</h3>
+        
+        <p><strong>Nome:</strong> Ryan Gomes Peçanha</p>
+        <p><strong>Turma:</strong> ADS0301M</p>
+        <p><strong>Matrícula:</strong> 25102415</p>
+        <p><strong>Unidade:</strong> Campo Grande</p>
+        <p><strong>Turno:</strong> Manhã</p>
+        <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+        <p><strong>Palavra-Chave:</strong>XXXX</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
