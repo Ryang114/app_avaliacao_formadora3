@@ -1,0 +1,108 @@
+.bg-azul {
+  --background: #0000FF !important; // Azul vibrante obrigatório
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.titulo-secao {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+  font-size: 1.4em;
+}
+
+.cartao-preto {
+  --background: #000000 !important;
+  background: #000000 !important;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  width: 95% !important;
+  min-height: 62vh !important;
+  margin: 10px 0 !important;
+  box-shadow: none;
+}
+
+.foto-produto-container {
+  display: flex;
+  justify-content: center;
+  background: white; // Fundo branco para destacar a imagem do produto
+  padding: 15px;
+  border-bottom: 2px solid #ffffff;
+  
+  img {
+    height: 180px;
+    object-fit: contain; // Mantém a proporção da imagem sem distorcer
+  }
+}
+
+.texto-branco {
+  color: white !important;
+  padding: 15px 20px;
+
+  .id-produto {
+    font-size: 0.9em;
+    color: #9999ff;
+    margin-bottom: 5px;
+  }
+  
+  .subtitulo {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0 10px 0;
+    color: white !important;
+  }
+
+  .categoria {
+    font-size: 0.95em;
+    text-transform: uppercase;
+    color: #ccc;
+  }
+
+  .descricao {
+    margin: 10px 0;
+    font-size: 0.95em;
+    line-height: 1.3;
+    max-height: 80px;
+    overflow-y: auto; // Cria uma barra de rolagem se o texto for muito longo
+  }
+
+  .preco {
+    font-weight: bold;
+    color: #00ff00 !important; // Preço em verde em destaque
+    font-size: 1.4em;
+    margin-top: 10px;
+  }
+}
+
+.botoes-container {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-top: 15px;
+}
+
+.botao-nav {
+  --background: #ffffff;
+  --color: #000000;
+  --border-radius: 8px;
+  font-weight: bold;
+  height: 50px;
+  width: 45%;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  p { margin-top: 10px; }
+}

@@ -1,17 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="bg-azul ion-no-padding">
+  <div class="main-container" *ngIf="products.length > 0; else loading">
+    
+    <h2 class="titulo-secao">Navegar Produtos</h2>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card class="cartao-preto" *ngIf="products[currentIndex] as produtoAtual">
+      <div class="foto-produto-container">
+        <img [src]="produtoAtual.image" alt="Produto" />
+      </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-card-content class="texto-branco">
+        <p class="id-produto"><strong>ID do Recurso:</strong> {{ produtoAtual.id }}</p>
+        <h3 class="subtitulo">{{ produtoAtual.title }}</h3>
+        <p class="categoria"><strong>Categoria:</strong> {{ produtoAtual.category }}</p>
+        <p class="descricao">{{ produtoAtual.description }}</p>
+        <h2 class="preco">US$ {{ produtoAtual.price }}</h2>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="botoes-container">
+      <ion-button class="botao-nav" (click)="prevProduct()" [disabled]="currentIndex === 0">
+        Anterior
+      </ion-button>
+      
+      <ion-button class="botao-nav" (click)="nextProduct()" [disabled]="currentIndex === products.length - 1">
+        Próximo
+      </ion-button>
+    </div>
+
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-container">
+      <ion-spinner name="crescent" color="light"></ion-spinner>
+      <p>Buscando dados na FakeStore...</p>
+    </div>
+  </ng-template>
 </ion-content>
